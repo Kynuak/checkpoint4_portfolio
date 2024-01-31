@@ -5,8 +5,8 @@
     --font-primary: "Merriweather Sans", sans-serif;
     --font-secondary : "Poppins", sans-serif;
 
-    --darkblue-color : "#1A2228";
-    --lightblue-color: "#3498DB";
-    --grey-color: "#333333";
-    --white-color: "#F4F1F8";
+    --darkblue-color : #1A2228;
+    --lightblue-color: #3498DB;
+    --grey-color: #333333;
+    --white-color: #F4F1F8;
 }
