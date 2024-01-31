@@ -17,20 +17,20 @@
             <h2>Présentation</h2>
             <div class="container-presentation">
                 <div class="my-description">
-                    <p>{{ user.presentation }}</p>
+                    <p>{{ user.presentation|nl2br }}</p>
 
                     <button class="btn-lightblue btn-CV">Télécharger mon CV</button>
                     <div class="container-reseau">
-                        <a href="">
+                        <a href="{{ linkReseau.linkedin }}" target="_blank">
                             <img class="link-github-linkedin" src="{{ asset("build/images/icones/icon-linkedin.svg") }}" alt="linkedin">
                         </a>
-                        <a href="">
+                        <a href="{{ linkReseau.github }}" target="_blank">
                             <img class="link-github-linkedin"  src="{{ asset("build/images/icones/icon-github.svg") }}" alt="github">
                         </a>
                     </div>
                 </div>
                 <div class="presentation-img"> 
-                    <img src="" alt="">
+                    <img src="{{ asset("build/images/home/image_presentation.png") }}" alt="">
                 </div>
             </div>
         </section>
