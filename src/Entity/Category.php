@@ -18,7 +18,7 @@ class Category
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\OneToMany(mappedBy: 'category', targetEntity: HarkSkill::class)]
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: HardSkill::class)]
     private Collection $harkSkills;
 
     public function __construct()
@@ -51,7 +51,7 @@ class Category
         return $this->harkSkills;
     }
 
-    public function addHarkSkill(HarkSkill $harkSkill): static
+    public function addHarkSkill(HardSkill $harkSkill): static
     {
         if (!$this->harkSkills->contains($harkSkill)) {
             $this->harkSkills->add($harkSkill);
@@ -61,7 +61,7 @@ class Category
         return $this;
     }
 
-    public function removeHarkSkill(HarkSkill $harkSkill): static
+    public function removeHarkSkill(HardSkill $harkSkill): static
     {
         if ($this->harkSkills->removeElement($harkSkill)) {
             // set the owning side to null (unless already changed)
