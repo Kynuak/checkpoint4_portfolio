@@ -4,4 +4,52 @@
 
 {% block body %}
 
+    <header class="home-header">
+        {% include 'components/_navbar.html.twig' %}
+        <div class="container-title">
+            <h1>Trouille Baptiste</h1>
+            <h2 class="h2-header-home">Développeur web</h2>
+        </div>
+    </header>
+
+    <main>
+        <section class="container section-presentation">
+            <h2>Présentation</h2>
+            <div class="container-presentation">
+                <div class="my-description">
+                    <p>{{ user.presentation }}</p>
+
+                    <button class="btn-lightblue btn-CV">Télécharger mon CV</button>
+                    <div class="container-reseau">
+                        <a href="">
+                            <img class="link-github-linkedin" src="{{ asset("build/images/icones/icon-linkedin.svg") }}" alt="linkedin">
+                        </a>
+                        <a href="">
+                            <img class="link-github-linkedin"  src="{{ asset("build/images/icones/icon-github.svg") }}" alt="github">
+                        </a>
+                    </div>
+                </div>
+                <div class="presentation-img"> 
+                    <img src="" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <h2>Compétences</h2>
+        </section>
+        <section class="container">
+            <h2>Projets</h2>
+        </section>
+        <section class="container">
+            <h2>Contact</h2>
+        </section>
+    </main>
+
+    <footer>
+
+        {% include 'components/_footer.html.twig' %}
+    
+    </footer>
+
+
 {% endblock %}

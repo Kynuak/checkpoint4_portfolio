@@ -24,6 +24,11 @@ class UserFixtures extends Fixture
             "adminadmin"
         );
         $user->setPassword($hashedPassword);
+        $user->setPresentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Nunc vitae quam quis quam volutpat tincidunt. 
+        Cras accumsan mi sit amet sapien fringilla feugiat. Ut fringilla commodo turpis nec dignissim. 
+        Cras et pretium quam, quis lobortis ex. Nullam bibendum, 
+        massa id facilisis ultrices, ante tortor laoreet nunc, ultrices cursus odio turpis.");
         $manager->persist($user);
 
 
