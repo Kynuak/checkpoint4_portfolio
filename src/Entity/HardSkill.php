@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\HarkSkillRepository;
+use App\Repository\HardSkillRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: HarkSkillRepository::class)]
-class HarkSkill
+#[ORM\Entity(repositoryClass: HardSkillRepository::class)]
+class HardSkill
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -21,10 +21,10 @@ class HarkSkill
     #[ORM\Column(length: 150)]
     private ?string $image = null;
 
-    #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'harkSill')]
+    #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'hardSill')]
     private Collection $projects;
 
-    #[ORM\ManyToOne(inversedBy: 'harkSkills')]
+    #[ORM\ManyToOne(inversedBy: 'hardSkills')]
     private ?Category $category = null;
 
     public function __construct()

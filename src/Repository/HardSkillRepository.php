@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\HarkSkill;
+use App\Entity\HardSkill;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -14,11 +14,11 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method HarkSkill[]    findAll()
  * @method HarkSkill[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class HarkSkillRepository extends ServiceEntityRepository
+class HardSkillRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, HarkSkill::class);
+        parent::__construct($registry, HardSkill::class);
     }
 
 //    /**
