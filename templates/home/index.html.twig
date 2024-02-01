@@ -13,7 +13,7 @@
     </header>
 
     <main>
-        <section class="container section-presentation">
+        <section id="presentation" class="container section-presentation">
             <h2>Présentation</h2>
             <div class="container-presentation">
                 <div class="my-description">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </section>
-        <section class="container section-competence">
+        <section id="competences" class="container section-competence">
             <h2>Compétences</h2>
             <div class="container-categories">
                 {% for category in categories %}
@@ -69,7 +69,7 @@
                 </div>
             </div>
         </section>
-        <section class="container section-projet">
+        <section id="projets" class="container section-projet">
             <h2>Projets</h2>
             <div class="container-projets">
                 {% for projet in projets %}
@@ -84,7 +84,7 @@
                 {% endfor %}
             </div>
         </section>
-        <section class="container section-contact">
+        <section id="contact" class="container section-contact">
             <h2>Contact</h2>
                 {% include 'components/_form_contact.html.twig' %}
         </section>
