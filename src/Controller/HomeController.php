@@ -2,16 +2,18 @@
 
 namespace App\Controller;
 
+use DateTime;
 use App\Entity\Contact;
 use App\Form\ContactType;
-use App\Repository\CategoryRepository;
-use App\Repository\HardSkillRepository;
-use App\Repository\ProjectRepository;
+use Doctrine\ORM\EntityManager;
 use App\Repository\UserRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\ProjectRepository;
+use App\Repository\CategoryRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
@@ -25,20 +27,23 @@ class HomeController extends AbstractController
         UserRepository $userRepository,
         CategoryRepository $categoryRepository,
         ProjectRepository $projectRepository,
-        Request $request
+        Request $request,
+        EntityManagerInterface $entityManager
     ): Response
     {
         $user = $userRepository->findOneBy([]);
         $categories = $categoryRepository->findAll();
         $projets = $projectRepository->findAll();
 
-        $contact = new Contact();
         
+        $contact = new Contact();
         $formContact = $this->createForm(ContactType::class, $contact);
         $formContact->handleRequest($request);
 
         if($formContact->isSubmitted() && $formContact->isValid()) {
-
+            $contact->setDate(new DateTime);
+            $entityManager->persist($contact);
+            $entityManager->flush();
         }
 
 
