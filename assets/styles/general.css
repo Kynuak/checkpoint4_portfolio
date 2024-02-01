@@ -56,6 +56,7 @@ ul {
 a {
     text-decoration: none;
     color: var(--white-color);
+    border: none;
 }
 
 button {
@@ -66,6 +67,9 @@ button {
     border: none;
 }
 
+button:focus {
+    border: none;
+}
 
 .btn-lightblue {
     background-color: var(--lightblue-color);
