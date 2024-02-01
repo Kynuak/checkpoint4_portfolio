@@ -1,0 +1,19 @@
+.footer-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem
+}
+
+.footer-home h3 {
+    color: var(--white-color);
+}
+
+.footer-home .container-reseau {
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.footer-home .container-reseau a {
+    margin: 0 2rem;
+}

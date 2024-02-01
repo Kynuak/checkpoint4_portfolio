@@ -44,6 +44,8 @@ class HomeController extends AbstractController
             $contact->setDate(new DateTime);
             $entityManager->persist($contact);
             $entityManager->flush();
+
+            return $this->redirectToRoute('app_home');
         }
 
 
