@@ -18,7 +18,6 @@
             <div class="container-presentation">
                 <div class="my-description">
                     <p>{{ user.presentation|nl2br }}</p>
-
                     <button class="btn-lightblue btn-CV">Télécharger mon CV</button>
                     <div class="container-reseau">
                         <a href="{{ linkReseau.linkedin }}" target="_blank">
@@ -53,36 +52,45 @@
             </div>
             <div class="container-softSkill">
                 <div class="softSkill">
-                    <img class="img-competences" src="{{ asset('build/images/icones/home/icon Sablier.svg') }}" alt="">
+                    <img class="img-competences" src="{{ asset('build/images/icones/home/icon Sablier.svg') }}" alt="sablier">
                     <h3>Patience et<br> persévérance</h3>
                 </div>
                 <div class="softSkill">
-                    <img class="img-competences" src="{{ asset('build/images/icones/home/icon Team.svg') }}" alt="">
+                    <img class="img-competences" src="{{ asset('build/images/icones/home/icon Team.svg') }}" alt="equipe">
                     <h3>Travail en<br> collaboration et<br> esprit d'équipe</h3>
                 </div>
                 <div class="softSkill">
-                    <img class="img-competences" src="{{ asset('build/images/icones/home/icone List.svg') }}" alt="">
+                    <img class="img-competences" src="{{ asset('build/images/icones/home/icone List.svg') }}" alt="liste">
                     <h3>Capacité<br> d'adaptation et<br> organisation</h3>
                 </div>
                 <div class="softSkill">
-                    <img class="img-competences" src="{{ asset('build/images/icones/home/icon Book.svg') }}" alt="">
+                    <img class="img-competences" src="{{ asset('build/images/icones/home/icon Book.svg') }}" alt="livre">
                     <h3>Curiosité et soif<br> d'apprendre</h3>
                 </div>
             </div>
         </section>
-        <section class="container">
+        <section class="container section-projet">
             <h2>Projets</h2>
+            <div class="container-projets">
+                {% for projet in projets %}
+                    {% include 'components/_card_projet.html.twig' with {
+                        "linkImage": projet.image, 
+                        "hardSkills": projet.hardSkills, 
+                        "description": projet.description,
+                        "urlGitProjet": projet.urlGithub,
+                        "urlProd": projet.urlProd,
+                        "titleProjet": projet.name
+                    } %}
+                {% endfor %}
+            </div>
         </section>
-        <section class="container">
+        <section class="container section-contact">
             <h2>Contact</h2>
+                {% include 'components/_form_contact.html.twig' %}
         </section>
     </main>
 
     <footer>
-
         {% include 'components/_footer.html.twig' %}
-    
     </footer>
-
-
 {% endblock %}

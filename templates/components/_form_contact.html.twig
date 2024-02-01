@@ -1,0 +1,14 @@
+{{ form_start(formContact, {'attr': {'class': "form-contact" }}) }}
+
+    <div class="identity">
+        {{ form_widget(formContact.lastname) }}
+        {{ form_widget(formContact.firstname) }}
+    </div>
+    <div class="container-email">
+        {{ form_widget(formContact.email) }}
+    </div>
+    <div class="container-message">
+        {{ form_widget(formContact.message) }}
+    </div>
+    <button class="btn-lightblue" type="submit">Envoyer</button>
+{{ form_end(formContact) }}
