@@ -35,11 +35,11 @@ class Project
     private ?string $image = null;
 
     #[ORM\ManyToMany(targetEntity: HardSkill::class, inversedBy: 'projects')]
-    private Collection $harkSill;
+    private Collection $hardSkills;
 
     public function __construct()
     {
-        $this->harkSill = new ArrayCollection();
+        $this->hardSkills = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -122,23 +122,23 @@ class Project
     /**
      * @return Collection<int, HarkSkill>
      */
-    public function getHardSill(): Collection
+    public function getHardSkills(): Collection
     {
-        return $this->harkSill;
+        return $this->hardSkills;
     }
 
-    public function addHarkSill(HardSkill $harkSill): static
+    public function addHardSkills(HardSkill $hardSkills): static
     {
-        if (!$this->harkSill->contains($harkSill)) {
-            $this->harkSill->add($harkSill);
+        if (!$this->hardSkills->contains($hardSkills)) {
+            $this->hardSkills->add($hardSkills);
         }
 
         return $this;
     }
 
-    public function removeHarkSill(HardSkill $harkSill): static
+    public function removeHardSills(HardSkill $hardSkills): static
     {
-        $this->harkSill->removeElement($harkSill);
+        $this->hardSkills->removeElement($hardSkills);
 
         return $this;
     }

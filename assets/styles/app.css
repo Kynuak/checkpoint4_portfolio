@@ -1,3 +1,8 @@
 @import 'variables.css';
 
 @import 'general.css';
+
+@import 'components/_navbar.css';
+@import 'components/_footer.css';
+
+@import 'home.css';

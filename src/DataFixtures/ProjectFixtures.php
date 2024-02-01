@@ -17,6 +17,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             Nunc vel augue a ipsum aliquet sodales id sed enim. Nam vel eros nec est faucibus 
             tempus quis id lorem. Praesent vulputate.",
             "url_github" => "https://github.com/Kynuak/mon_portfolio",
+            "url_prod" => "https://odyssey.wildcodeschool.com",
             "image" => "bobo-coffee.png",
             "hardSkill" => [
                 "PHP",
@@ -30,6 +31,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             Nunc vel augue a ipsum aliquet sodales id sed enim. Nam vel eros nec est faucibus 
             tempus quis id lorem. Praesent vulputate.",
             "url_github" => "https://github.com/Kynuak/mon_portfolio",
+            "url_prod" => "",
             "image" => "straszik.png",
             "hardSkill" => [
                 "PHP",
@@ -43,6 +45,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             Nunc vel augue a ipsum aliquet sodales id sed enim. Nam vel eros nec est faucibus 
             tempus quis id lorem. Praesent vulputate.",
             "url_github" => "https://github.com/Kynuak/mon_portfolio",
+            "url_prod" => "",
             "image" => "Wildy Gaming.png",
             "hardSkill" => [
                 "PHP",
@@ -62,8 +65,9 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             $projectEntity->setDescription($project['description']);
             $projectEntity->setImage($project['image']);
             $projectEntity->setUrlGithub($project['url_github']);
+            $projectEntity->setUrlProd($project["url_prod"]);
             foreach($project['hardSkill'] as $hardSkillName) {
-                $projectEntity->addHarkSill($this->getReference("hardskill_".$hardSkillName));
+                $projectEntity->addHardSkills($this->getReference("hardskill_".$hardSkillName));
             }
             $manager->persist($projectEntity);
         }

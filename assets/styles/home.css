@@ -1,0 +1,277 @@
+/* Header */
+.home-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.container-title {
+    text-align: center;
+    padding: 5rem;
+}
+
+.h2-header-home {
+    font-size: 2rem;
+    color: var(--white-color);
+    margin-top: 1.5rem;
+    
+}
+
+
+/* Main */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+/* Section Présentation */
+
+.section-presentation {
+    background-color: var(--white-color);
+}
+
+.section-presentation h2 {
+    color: var(--darkblue-color);
+}
+
+.container-presentation {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.my-description {
+    display: flex;
+    width: 35%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my-description p {
+    text-align: left;
+    padding: 1rem;
+}
+
+.container-reseau {
+    display: flex;
+}
+
+.container-reseau a {
+    margin: 0.5rem 1rem;
+}
+
+.presentation-img {
+    width: 25%;
+    height: 100%;
+    align-self: center;
+}
+
+.presentation-img img {
+    width: 100%;
+}
+
+.btn-CV {
+    margin: 1rem 0;
+}
+
+
+/* Section Compétences */
+
+.section-competence {
+    background-color: var(--grey-color);
+    color: var(--white-color);
+}
+
+.container-categories {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.container-hardSkills-category {
+    padding: 1rem;
+    text-align: center;
+    height: 100%;
+}
+
+.container-categories hr {
+    margin: 0 3rem;
+    border: solid 1px var(--lightblue-color);
+}
+
+.container-hardSkills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 1rem;
+}
+
+.img-competences {
+    width: 3.75rem;
+    margin: auto;
+    filter: drop-shadow(-1px -1px 6px #0D1114) drop-shadow(1px 1px 2px #6E6D6F)  ;
+}
+
+.container-hardSkills .img-git {
+    background-color: var(--white-color);
+    border-radius: 50%;
+}
+.container-hardSkills .img-larger {
+    width: 5rem;
+}
+
+.container-hardSkills .img-php {
+    width: 5rem;
+    height: 4rem;
+}
+
+.container-softSkill {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.softSkill {
+   display: grid;
+   grid-template-rows: repeat(2, 1fr);
+   align-items: center;
+}
+
+/* Section Projet */
+
+.section-projet {
+    color: var(--white-color);
+}
+
+.container-projets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Card Projet */
+.container-projets article.card-projet {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    background-color: var(--grey-color);
+    width: 30rem;
+    border-radius: 0.8rem;
+    margin: 3rem;
+    box-shadow: -4px -4px 16px #0D1114, 6px 6px 20px #6E6D6F;
+}
+
+.container-body-card {
+    padding: 0.6rem 1rem;
+}
+
+.top-card-media img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
+    
+}
+
+.hardSkills-card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hardSkills-card  .hardSkill {
+    background-color: var(--white-color);
+    color: var(--darkblue-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: 0.2rem 0.5rem;
+}
+
+.description-projet {
+    padding: 0.2rem 1rem;
+    margin: 0.5rem 0;
+}
+
+.link-projet-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-projet-card>a{
+    margin: 0.5rem 1rem;
+}
+
+.link-prod-projet {
+    display: flex;
+    align-items: center;
+}
+
+.img-link-prod {
+    width: 2rem;
+}
+
+
+/* Section Contact */
+.section-contact {
+    background-color: var(--white-color);
+}
+
+.section-contact h2 {
+    color: var(--darkblue-color);
+    margin: 0 auto;
+}
+
+.form-contact {
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.identity {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem
+}
+
+.identity, .container-email, .container-message {
+    width: 100%;
+    padding: 1rem;
+} 
+
+.form-input-contact[type="email"], .form-textarea-contact {
+    width: calc(99.2% - 1.6rem);
+}
+
+.identity>.form-input-contact {
+    width: 50%;
+}
+
+.form-input-contact, .form-textarea-contact {
+    border: solid 3px var(--lightblue-color);
+    border-radius: 0.625rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    padding: 0.5rem 0.8rem;
+}
+
+.form-textarea-contact {
+    height: 10rem;
+}
+
+:focus {
+    border: solid 3px var(--darkblue-color);
+}
+
+.form-contact .btn-lightblue {
+    font-size: 1.5rem;
+    padding: 0.2rem 2rem;
+}
