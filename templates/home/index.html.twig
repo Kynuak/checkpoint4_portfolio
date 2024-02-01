@@ -42,7 +42,7 @@
                         <h3>{{ category.name }}</h3>
                         <div class="container-hardSkills">
                         {% for hardSkill in category.hardSkills %}
-                            <img class="{% if hardSkill.name in ["Twig", "MySQL"] %} img-larger {% elseif hardSkill.name == "PHP" %} img-php {% endif %}" src="{{ asset('build/images/icones/home/' ~ hardSkill.image) }}" alt="">
+                            <img class="img-competences {% if hardSkill.name in ["Twig", "MySQL"] %} img-larger {% elseif hardSkill.name == "PHP" %} img-php {% elseif hardSkill.name == "Git" %} img-git {% endif %}" src="{{ asset('build/images/icones/home/' ~ hardSkill.image) }}" alt="">
                         {% endfor %} 
                         </div>
                     </div>
@@ -50,6 +50,24 @@
                         <hr>
                     {% endif %}
                 {% endfor %}
+            </div>
+            <div class="container-softSkill">
+                <div class="softSkill">
+                    <img class="img-competences" src="{{ asset('build/images/icones/home/icon Sablier.svg') }}" alt="">
+                    <h3>Patience et<br> persévérance</h3>
+                </div>
+                <div class="softSkill">
+                    <img class="img-competences" src="{{ asset('build/images/icones/home/icon Team.svg') }}" alt="">
+                    <h3>Travail en<br> collaboration et<br> esprit d'équipe</h3>
+                </div>
+                <div class="softSkill">
+                    <img class="img-competences" src="{{ asset('build/images/icones/home/icone List.svg') }}" alt="">
+                    <h3>Capacité<br> d'adaptation et<br> organisation</h3>
+                </div>
+                <div class="softSkill">
+                    <img class="img-competences" src="{{ asset('build/images/icones/home/icon Book.svg') }}" alt="">
+                    <h3>Curiosité et soif<br> d'apprendre</h3>
+                </div>
             </div>
         </section>
         <section class="container">

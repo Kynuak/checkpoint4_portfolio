@@ -93,11 +93,11 @@ div.container-title {
 .container-hardSkills-category {
     padding: 1rem;
     text-align: center;
+    height: 100%;
 }
 
 .container-categories hr {
-    margin: 0 5rem;
-    height: 20rem;
+    margin: 0 3rem;
     border: solid 1px var(--lightblue-color);
 }
 
@@ -107,11 +107,16 @@ div.container-title {
     margin-top: 1rem;
 }
 
-.container-hardSkills img {
+.img-competences {
     width: 3.75rem;
     margin: auto;
+    filter: drop-shadow(-1px -1px 6px #0D1114) drop-shadow(1px 1px 2px #6E6D6F)  ;
 }
 
+.container-hardSkills .img-git {
+    background-color: var(--white-color);
+    border-radius: 50%;
+}
 .container-hardSkills .img-larger {
     width: 5rem;
 }
@@ -119,4 +124,17 @@ div.container-title {
 .container-hardSkills .img-php {
     width: 5rem;
     height: 4rem;
+}
+
+.container-softSkill {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.softSkill {
+   display: grid;
+   grid-template-rows: repeat(2, 1fr);
 }
