@@ -18,7 +18,9 @@
             <div class="container-presentation">
                 <div class="my-description">
                     <p>{{ user.presentation|nl2br }}</p>
-                    <button class="btn-lightblue btn-CV">Télécharger mon CV</button>
+                    <a href="{{ asset('build/images/CV/CV-Baptiste-TROUILLE.pdf') }}" target="_blank" >
+                        <button class="btn-lightblue btn-CV">Télécharger mon CV</button>
+                    </a>
                     <div class="container-reseau">
                         <a href="{{ linkReseau.linkedin }}" target="_blank">
                             <img class="link-github-linkedin" src="{{ asset("build/images/icones/icon-linkedin.svg") }}" alt="linkedin">
