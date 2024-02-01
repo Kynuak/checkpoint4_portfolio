@@ -25,7 +25,7 @@
                             <img class="link-github-linkedin" src="{{ asset("build/images/icones/icon-linkedin.svg") }}" alt="linkedin">
                         </a>
                         <a href="{{ linkReseau.github }}" target="_blank">
-                            <img class="link-github-linkedin"  src="{{ asset("build/images/icones/icon-github.svg") }}" alt="github">
+                            <img class="link-github-linkedin" src="{{ asset("build/images/icones/icon-github.svg") }}" alt="github">
                         </a>
                     </div>
                 </div>
@@ -34,8 +34,23 @@
                 </div>
             </div>
         </section>
-        <section class="container">
+        <section class="container section-competence">
             <h2>Compétences</h2>
+            <div class="container-categories">
+                {% for category in categories %}
+                    <div class="container-hardSkills-category">
+                        <h3>{{ category.name }}</h3>
+                        <div class="container-hardSkills">
+                        {% for hardSkill in category.hardSkills %}
+                            <img class="{% if hardSkill.name in ["Twig", "MySQL"] %} img-larger {% elseif hardSkill.name == "PHP" %} img-php {% endif %}" src="{{ asset('build/images/icones/home/' ~ hardSkill.image) }}" alt="">
+                        {% endfor %} 
+                        </div>
+                    </div>
+                    {% if loop.last != categories|length %}
+                        <hr>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </section>
         <section class="container">
             <h2>Projets</h2>

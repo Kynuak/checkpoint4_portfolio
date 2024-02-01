@@ -24,16 +24,21 @@ class HardSkillFixtures extends Fixture implements DependentFixtureInterface
             "category_ref" => "category_Frontend"
         ],
         [
+            "name" => "Javascript",
+            "image" => "icone-javascript.svg",
+            "category_ref" => "category_Frontend"
+        ],
+        [
             "name" => "Photoshop",
             "image" => "icone-photoshop.svg",
             "category_ref" => "category_Conception"
         ],
         [
             "name" => "Git",
-            "image" => "icone_git.svg",
+            "image" => "icone-github.svg",
             "category_ref" => "category_Gestion de projet"
         ]
-        ];
+    ];
 
 
     public function load(ObjectManager $manager): void

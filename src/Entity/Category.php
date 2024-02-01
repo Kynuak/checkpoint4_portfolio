@@ -19,11 +19,11 @@ class Category
     private ?string $name = null;
 
     #[ORM\OneToMany(mappedBy: 'category', targetEntity: HardSkill::class)]
-    private Collection $harkSkills;
+    private Collection $hardSkills;
 
     public function __construct()
     {
-        $this->harkSkills = new ArrayCollection();
+        $this->hardSkills = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -44,29 +44,29 @@ class Category
     }
 
     /**
-     * @return Collection<int, HarkSkill>
+     * @return Collection<int, hardSkill>
      */
-    public function getHarkSkills(): Collection
+    public function gethardSkills(): Collection
     {
-        return $this->harkSkills;
+        return $this->hardSkills;
     }
 
-    public function addHarkSkill(HardSkill $harkSkill): static
+    public function addhardSkill(HardSkill $hardSkill): static
     {
-        if (!$this->harkSkills->contains($harkSkill)) {
-            $this->harkSkills->add($harkSkill);
-            $harkSkill->setCategory($this);
+        if (!$this->hardSkills->contains($hardSkill)) {
+            $this->hardSkills->add($hardSkill);
+            $hardSkill->setCategory($this);
         }
 
         return $this;
     }
 
-    public function removeHarkSkill(HardSkill $harkSkill): static
+    public function removehardSkill(HardSkill $hardSkill): static
     {
-        if ($this->harkSkills->removeElement($harkSkill)) {
+        if ($this->hardSkills->removeElement($hardSkill)) {
             // set the owning side to null (unless already changed)
-            if ($harkSkill->getCategory() === $this) {
-                $harkSkill->setCategory(null);
+            if ($hardSkill->getCategory() === $this) {
+                $hardSkill->setCategory(null);
             }
         }
 

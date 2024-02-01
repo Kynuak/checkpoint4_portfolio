@@ -25,7 +25,7 @@ div.container-title {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem;
+    padding: 2rem 1rem;
 }
 
 /* Section Présentation */
@@ -77,3 +77,46 @@ div.container-title {
     margin: 1rem 0;
 }
 
+
+/* Section Compétences */
+
+.section-competence {
+    background-color: var(--grey-color);
+    color: var(--white-color);
+}
+
+.container-categories {
+    display: flex;
+    justify-content: center;
+}
+
+.container-hardSkills-category {
+    padding: 1rem;
+    text-align: center;
+}
+
+.container-categories hr {
+    margin: 0 5rem;
+    height: 20rem;
+    border: solid 1px var(--lightblue-color);
+}
+
+.container-hardSkills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 1rem;
+}
+
+.container-hardSkills img {
+    width: 3.75rem;
+    margin: auto;
+}
+
+.container-hardSkills .img-larger {
+    width: 5rem;
+}
+
+.container-hardSkills .img-php {
+    width: 5rem;
+    height: 4rem;
+}
