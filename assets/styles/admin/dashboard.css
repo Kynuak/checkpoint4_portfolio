@@ -27,8 +27,10 @@
 }
 
 table button {
-    padding: unset;
+    padding: 0.2rem 0.8rem;
+    vertical-align: center;
     cursor: pointer;
+    border-radius: 1rem;
 }
 
 .container-link-crud hr {
@@ -232,20 +234,28 @@ textarea.form-input-projects {
 }
 
 table {
-    border:1px solid #b3adad;
+    border-radius: 0.5rem;
     border-collapse:collapse;
-    margin: 0 auto
+    margin: 0 auto;
+    width: 90%;
+    overflow: hidden;
+    
 }
+
+
+
 table th {
     border:1px solid #b3adad;
     padding:6px;
-    background: #f0f0f0;
-    color: #313030;
+    background-color: var(--lightblue-color);
+    color: var(--white-color);
+    font-family: var(--font-primary);
 }
 table td {
     border:1px solid #b3adad;
     text-align:center;
     padding:6px;
-    background: #ffffff;
-    color: #313030;
+    background-color: var(--lightblue-color);
+    color: var(--white-color);
+    font-family: var(--font-secondary);
 }
