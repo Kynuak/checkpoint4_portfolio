@@ -1,0 +1,43 @@
+.section-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    height: 100%;
+}
+
+.section-login .form-login {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: 3rem 0;
+}
+
+.section-login .form-login label {
+    font-size: 2rem;
+    font-family: var(--font-primary);
+    text-align: center;
+    color: var(--white-color);
+}
+
+.input-login {
+    border: solid 3px var(--lightblue-color);
+    border-radius: 0.625rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    padding: 0.5rem 0.8rem;
+    margin:  1rem 0;
+}
+
+.form-login button {
+    width: 80%;
+    margin: 1rem 0;
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+.test {
+    height: 10rem;
+}
