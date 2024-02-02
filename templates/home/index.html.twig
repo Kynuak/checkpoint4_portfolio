@@ -35,11 +35,11 @@
                 </div>
             </div>
         </section>
-        <section id="competences" class="container section-competence" data-aos="fade-up" data-aos-duration='2000'>
+        <section id="competences" class="container section-competence">
             <h2>Compétences</h2>
-            <div class="container-categories">
+            <div class="container-categories"  data-aos="fade-up" data-aos-duration='2000'>
                 {% for category in categories %}
-                    <div class="container-hardSkills-category">
+                    <div class="container-hardSkills-category" >
                         <h3>{{ category.name }}</h3>
                         <div class="container-hardSkills">
                         {% for hardSkill in category.hardSkills %}
@@ -52,7 +52,7 @@
                     {% endif %}
                 {% endfor %}
             </div>
-            <div class="container-softSkill">
+            <div class="container-softSkill"   data-aos="fade-up" data-aos-duration='6000'>
                 <div class="softSkill">
                     <img class="img-competences" src="{{ asset('build/images/icones/home/icon Sablier.svg') }}" alt="sablier">
                     <h3>Patience et<br> persévérance</h3>
