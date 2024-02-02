@@ -3,11 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Repository\ContactRepository;
-use App\Repository\HardSkillRepository;
 use App\Repository\ProjectRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\HardSkillRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 
 class AdminDashboardController extends AbstractController
 {
@@ -18,7 +19,6 @@ class AdminDashboardController extends AbstractController
         ContactRepository $contactRepository
     ): Response
     {
-
         $hardSkills = $hardSkillRepository->findAll();
         $projects = $projectRepository->findAll();
         $contacts = $contactRepository->findAll();
