@@ -168,6 +168,8 @@ div.container-title {
 }
 
 .container-body-card {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     padding: 0.6rem 1rem;
 }
 
