@@ -9,6 +9,6 @@
 import './styles/app.css';
 
 import './js/particles';
-import './js/smoothDefil';
+// import './js/smoothDefil';
 
 AOS.init();
