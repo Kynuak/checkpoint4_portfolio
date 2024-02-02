@@ -43,7 +43,7 @@
                         <h3>{{ category.name }}</h3>
                         <div class="container-hardSkills">
                         {% for hardSkill in category.hardSkills %}
-                            <img class="img-competences {% if hardSkill.name in ["Twig", "MySQL"] %} img-larger {% elseif hardSkill.name == "PHP" %} img-php {% elseif hardSkill.name == "Git" %} img-git {% endif %}" src="{{ asset('build/images/icones/home/' ~ hardSkill.image) }}" alt="">
+                            <img class="img-competences {% if hardSkill.name in ["Twig", "MySQL"] %} img-larger {% elseif hardSkill.name == "PHP" %} img-php {% elseif hardSkill.name in ["Git", "Symfony"] %} img-git {% endif %}" src="{{ vich_uploader_asset(hardSkill) }}" alt="{{ hardSkill.name }}">
                         {% endfor %} 
                         </div>
                     </div>
@@ -76,7 +76,7 @@
             <div class="container-projets">
                 {% for projet in projets %}
                     {% include 'components/_card_projet.html.twig' with {
-                        "linkImage": projet.image, 
+                        "linkImage": projet, 
                         "hardSkills": projet.hardSkills, 
                         "description": projet.description,
                         "urlGitProjet": projet.urlGithub,

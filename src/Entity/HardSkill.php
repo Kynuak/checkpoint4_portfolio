@@ -2,12 +2,20 @@
 
 namespace App\Entity;
 
-use App\Repository\HardSkillRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use DateTime;
+use DateTimeInterface;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\HardSkillRepository;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
+
 
 #[ORM\Entity(repositoryClass: HardSkillRepository::class)]
+#[Vich\Uploadable] 
 class HardSkill
 {
     #[ORM\Id]
@@ -18,14 +26,20 @@ class HardSkill
     #[ORM\Column(length: 100)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 150)]
+    #[ORM\Column(length: 150, nullable: true)]
     private ?string $image = null;
 
-    #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'hardSill')]
+    #[Vich\UploadableField(mapping: 'hardSkill_image', fileNameProperty: 'image')]
+    private ?File $imageFile = null;
+
+    #[ORM\ManyToMany(targetEntity: Project::class, mappedBy: 'hardSkills')]
     private Collection $projects;
 
     #[ORM\ManyToOne(inversedBy: 'hardSkills')]
     private ?Category $category = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?DatetimeInterface $updatedAt = null;
 
     public function __construct()
     {
@@ -54,7 +68,7 @@ class HardSkill
         return $this->image;
     }
 
-    public function setImage(string $image): static
+    public function setImage(?string $image): static
     {
         $this->image = $image;
 
@@ -73,7 +87,7 @@ class HardSkill
     {
         if (!$this->projects->contains($project)) {
             $this->projects->add($project);
-            $project->addHarkSill($this);
+            $project->addHardSkills($this);
         }
 
         return $this;
@@ -82,7 +96,7 @@ class HardSkill
     public function removeProject(Project $project): static
     {
         if ($this->projects->removeElement($project)) {
-            $project->removeHarkSill($this);
+            $project->removeHardSkills($this);
         }
 
         return $this;
@@ -96,6 +110,41 @@ class HardSkill
     public function setCategory(?Category $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function setImageFile(?File $image = null): HardSkill
+    {
+        $this->imageFile = $image;
+        if ($image) {
+          $this->updatedAt = new DateTime('now');
+        }
+    
+        return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * Get the value of updatedAt
+     */ 
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set the value of updatedAt
+     *
+     * @return  self
+     */ 
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

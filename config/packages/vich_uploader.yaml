@@ -1,0 +1,15 @@
+vich_uploader:
+    db_driver: orm
+
+    metadata:
+        type: attribute
+
+    mappings:
+       hardSkill_image:
+           uri_prefix: /uploads/images/icones/hardSkills
+           upload_destination: '%upload_directory_hardSkills%'
+           namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+       project_image:
+           uri_prefix: /uploads/images/projects
+           upload_destination: '%upload_directory_projects%'
+           namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
