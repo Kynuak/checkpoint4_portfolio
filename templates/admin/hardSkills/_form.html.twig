@@ -1,0 +1,16 @@
+{{ form_start(formNewHardSkill, {"attr": {"class": "admin-form-skill"}}) }}
+
+    <div class="admin-form-container">
+        {{ form_label(formNewHardSkill.name) }}
+        {{ form_widget(formNewHardSkill.name) }}
+    </div>
+    <div class="admin-form-container">
+        {{ form_label(formNewHardSkill.imageFile) }}
+        {{ form_widget(formNewHardSkill.imageFile) }}
+    </div>
+    <div class="admin-form-container">
+    {{ form_label(formNewHardSkill.category) }}
+        {{ form_widget(formNewHardSkill.category) }}
+    </div>
+    <button type="submit" class="btn-lightblue btn-form-skills" >{{ button_label|default('Ajouter une nouvelle compétence') }}</button>
+{{ form_end(formNewHardSkill) }}

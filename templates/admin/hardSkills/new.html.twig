@@ -1,0 +1,10 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}{{ parent() }}Compétences{% endblock %}
+
+{% block body %}
+    <section class="admin-edit-new-skill">
+        <h2>Ajouter une nouvelle compétence</h2>
+        {{ include('admin/hardSkills/_form.html.twig')}}
+    </section>
+{% endblock %}

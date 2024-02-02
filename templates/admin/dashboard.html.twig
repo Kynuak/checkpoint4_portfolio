@@ -1,0 +1,82 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Dashboard Administrateur{% endblock %}
+
+{% block body %}
+        <section class="admin-competences">
+            <div class="admin-container-h2-btn">
+                <h2>Compétences</h2>
+                <a href="{{ path('app_admin_skills_new') }}"><button class="btn-lightblue btn-admin">Ajouter une nouvelle compétence</button></a>
+            </div>
+            
+            <div class="admin-container-hardSkills">
+                {% for hardSkill in hardSkills %}
+                    <div class="admin-container-skill">
+                        <h3>{{ hardSkill.name }}</h3>
+                        <div class="container-link-crud">
+                            <a class="" href="{{ path('app_admin_skills_edit', {"idHardSkill": hardSkill.id}) }}">
+                                <img class="crud-img" src="{{ asset('build/images/icones/admin/Icon_pen.svg') }}" alt="">
+                            </a>
+                            <hr>
+                            {{ include('admin/hardSkills/_delete.html.twig') }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="admin-projets">
+            <div class="admin-container-h2-btn">
+                <h2>Projets</h2>
+                <a href="{{ path('app_admin_project_new') }}"><button class="btn-darkblue btn-admin">Ajouter un nouveau projet</button></a>
+            </div>
+            <div class="admin-container-projects">
+                {% for project in projects %}
+                    <div class="admin-container-project">
+                    <h3>{{ project.name }}</h3>
+                        <div class="container-link-crud">
+                            <a class="" href="{{ path('app_admin_projects_edit', {"idProject": project.id}) }}">
+                                <img class="crud-img" src="{{ asset('build/images/icones/admin/Icon_pen.svg') }}" alt="">
+                            </a>
+                            <hr>
+                            {{ include('admin/projects/_delete.html.twig') }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="admin-contact">
+            <h2>Contact</h2>
+            <div class="admin-container-contact">
+                {% if contacts is not empty %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Email 2</th>
+                                <th>Nom 3</th>
+                                <th>Prénom</th>
+                                <th>Message</th>
+                                <th>Éditon</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for contact in contacts %}
+                                <tr>
+                                    <td>{{ contact.date|date }}</td>
+                                    <td>{{ contact.email }}</td>
+                                    <td>{{ contact.firstname }}</td>
+                                    <td>{{ contact.lastname }}</td>
+                                    <td>{{ contact.message }}</td>
+                                    <td>                        
+                                        {{ include('admin/contact/_delete.html.twig') }}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <h3>Aucun message reçu !</h3>
+                {% endif %}
+            </div>
+        </section>
+{% endblock %}

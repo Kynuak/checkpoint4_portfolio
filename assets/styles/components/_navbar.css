@@ -1,0 +1,17 @@
+nav {
+    background-color: var(--lightblue-color);
+    width: 50%;
+    padding: 1.2rem;
+    border-radius: 0 0 0.6rem 0.6rem;
+}
+
+.nav-menu ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-menu ul a {
+    color: var(--white-color);
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+}

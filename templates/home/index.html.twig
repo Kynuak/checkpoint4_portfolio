@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Portfolio Développeur web{% endblock %}
+
+{% block body %}
+
+    <header class="home-header">
+        {% include 'components/_navbar.html.twig' %}
+        <div class="container-title">
+            <h1>Trouille Baptiste</h1>
+            <h2 class="h2-header-home">Développeur web</h2>
+        </div>
+    </header>
+
+    <main>
+        <section id="presentation" class="container section-presentation">
+            <h2>Présentation</h2>
+            <div class="container-presentation">
+                <div class="my-description">
+                    <p>{{ user.presentation|nl2br }}</p>
+                    <a href="{{ asset('build/images/CV/CV-Baptiste-TROUILLE.pdf') }}" target="_blank" >
+                        <button class="btn-lightblue btn-CV">Télécharger mon CV</button>
+                    </a>
+                    <div class="container-reseau">
+                        <a href="{{ linkReseau.linkedin }}" target="_blank">
+                            <img class="link-github-linkedin" src="{{ asset("build/images/icones/icon-linkedin.svg") }}" alt="linkedin">
+                        </a>
+                        <a href="{{ linkReseau.github }}" target="_blank">
+                            <img class="link-github-linkedin" src="{{ asset("build/images/icones/icon-github.svg") }}" alt="github">
+                        </a>
+                    </div>
+                </div>
+                <div class="presentation-img"> 
+                    <img src="{{ asset("build/images/home/image_presentation.png") }}" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="competences" class="container section-competence">
+            <h2>Compétences</h2>
+            <div class="container-categories">
+                {% for category in categories %}
+                    <div class="container-hardSkills-category">
+                        <h3>{{ category.name }}</h3>
+                        <div class="container-hardSkills">
+                        {% for hardSkill in category.hardSkills %}
+                            <img class="img-competences {% if hardSkill.name in ["Twig", "MySQL"] %} img-larger {% elseif hardSkill.name == "PHP" %} img-php {% elseif hardSkill.name in ["Git", "Symfony"] %} img-git {% endif %}" src="{{ vich_uploader_asset(hardSkill) }}" alt="{{ hardSkill.name }}">
+                        {% endfor %} 
+                        </div>
+                    </div>
+                    {% if loop.last != categories|length %}
+                        <hr>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="container-softSkill">
+                <div class="softSkill">
+                    <img class="img-competences" src="{{ asset('build/images/icones/home/icon Sablier.svg') }}" alt="sablier">
+                    <h3>Patience et<br> persévérance</h3>
+                </div>
+                <div class="softSkill">
+                    <img class="img-competences" src="{{ asset('build/images/icones/home/icon Team.svg') }}" alt="equipe">
+                    <h3>Travail en<br> collaboration et<br> esprit d'équipe</h3>
+                </div>
+                <div class="softSkill">
+                    <img class="img-competences" src="{{ asset('build/images/icones/home/icone List.svg') }}" alt="liste">
+                    <h3>Capacité<br> d'adaptation et<br> organisation</h3>
+                </div>
+                <div class="softSkill">
+                    <img class="img-competences" src="{{ asset('build/images/icones/home/icon Book.svg') }}" alt="livre">
+                    <h3>Curiosité et soif<br> d'apprendre</h3>
+                </div>
+            </div>
+        </section>
+        <section id="projets" class="container section-projet">
+            <h2>Projets</h2>
+            <div class="container-projets">
+                {% for projet in projets %}
+                    {% include 'components/_card_projet.html.twig' with {
+                        "linkImage": projet, 
+                        "hardSkills": projet.hardSkills, 
+                        "description": projet.description,
+                        "urlGitProjet": projet.urlGithub,
+                        "urlProd": projet.urlProd,
+                        "titleProjet": projet.name
+                    } %}
+                {% endfor %}
+            </div>
+        </section>
+        <section id="contact" class="container section-contact">
+            <h2>Contact</h2>
+                {% include 'components/_form_contact.html.twig' %}
+        </section>
+    </main>
+
+    <footer class="footer-home">
+        {% include 'components/_footer.html.twig' %}
+    </footer>
+{% endblock %}
