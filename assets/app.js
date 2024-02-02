@@ -10,3 +10,5 @@ import './styles/app.css';
 
 import './js/particles';
 import './js/smoothDefil';
+
+AOS.init();

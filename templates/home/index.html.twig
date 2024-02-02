@@ -35,7 +35,7 @@
                 </div>
             </div>
         </section>
-        <section id="competences" class="container section-competence">
+        <section id="competences" class="container section-competence" data-aos="fade-up" data-aos-duration='2000'>
             <h2>Compétences</h2>
             <div class="container-categories">
                 {% for category in categories %}
@@ -71,9 +71,9 @@
                 </div>
             </div>
         </section>
-        <section id="projets" class="container section-projet">
+        <section id="projets" class="container section-projet"  data-aos="fade-up" data-aos-duration='3000'>
             <h2>Projets</h2>
-            <div class="container-projets">
+            <div class="container-projets" data-aos="flip-left" data-aos-duration='2000'>
                 {% for projet in projets %}
                     {% include 'components/_card_projet.html.twig' with {
                         "linkImage": projet, 
@@ -86,13 +86,13 @@
                 {% endfor %}
             </div>
         </section>
-        <section id="contact" class="container section-contact">
+        <section id="contact" class="container section-contact" data-aos="fade-up" data-aos-duration='2000'>
             <h2>Contact</h2>
                 {% include 'components/_form_contact.html.twig' %}
         </section>
     </main>
 
-    <footer class="footer-home">
+    <footer class="footer-home" >
         {% include 'components/_footer.html.twig' %}
     </footer>
 {% endblock %}
