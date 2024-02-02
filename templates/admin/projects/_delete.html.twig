@@ -1,0 +1,7 @@
+<form method="post" action="{{ path('app_admin_projects_delete', {'idProject': project.id}) }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ project.id) }}">
+
+    <button type="submit">
+        <img class="img-trash" src="{{ asset('build/images/icones/admin/Icon_poubelle.svg') }}" alt="">
+    </button>
+</form>

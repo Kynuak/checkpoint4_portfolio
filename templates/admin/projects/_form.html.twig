@@ -1,0 +1,25 @@
+{{ form_start(formNewProject, {"attr": {"class": "admin-form-project"}}) }}
+
+    <div class="admin-form-container">
+        {{ form_label(formNewProject.name) }}
+        {{ form_widget(formNewProject.name) }}
+    </div>
+    <div class="admin-form-container">
+        {{ form_label(formNewProject.description) }}
+        {{ form_widget(formNewProject.description) }}
+    </div>
+        <div class="admin-form-container">
+        {{ form_label(formNewProject.urlGithub) }}
+        {{ form_widget(formNewProject.urlGithub) }}
+    </div>
+        <div class="admin-form-container">
+        {{ form_label(formNewProject.imageFile) }}
+        {{ form_widget(formNewProject.imageFile) }}
+    </div>
+        <div class="admin-form-container">
+        {{ form_label(formNewProject.hardSkills) }}
+        {{ form_widget(formNewProject.hardSkills) }}
+    </div>
+    
+    <button type="submit" class="btn-lightblue btn-form-projects" >{{ button_label|default('Ajouter un nouveau projet') }}</button>
+{{ form_end(formNewProject) }}

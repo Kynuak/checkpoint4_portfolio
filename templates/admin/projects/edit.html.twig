@@ -1,0 +1,11 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}{{ parent() }}Projets{% endblock %}
+
+{% block body %}
+    <section class="admin-edit-new-project">
+        <h2>Modifier le projet</h2>
+        {{ include('admin/projects/_form.html.twig', {'button_label': 'Modifier le projet'}) }}
+    
+    </section>
+{% endblock %}

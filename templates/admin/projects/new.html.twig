@@ -1,0 +1,10 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block title %}Hello AdminProjectController!{% endblock %}
+
+{% block body %}
+    <section class="admin-edit-new-project">
+        <h2>Ajouter un nouveau projet</h2>
+        {% include 'admin/projects/_form.html.twig' %}
+    </section>
+{% endblock %}
